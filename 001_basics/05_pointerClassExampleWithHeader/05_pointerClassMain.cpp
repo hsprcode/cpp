@@ -24,6 +24,7 @@ int main() {
 
     cout << my_humanPointer->get_name() << " is " << my_humanPointer->get_age() << " years old." << endl;
     
+    delete my_humanPointer;
     cout << endl;
     cout << endl;
     return (0);
