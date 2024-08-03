@@ -12,14 +12,17 @@ int main() {
     cout << endl;
     cout << endl;
 
-    human my_human("Harry", 17, human_personality::creative);
+    human *my_humanPointer; // pointer
+
+    my_humanPointer = new human("Harry", 17, human_personality::creative); // memory 
     
-    cout << my_human.get_name() << " is a " << (int) my_human.get_personality() << " human." << endl;
+    cout << (*my_humanPointer).get_name() << " is a " << (int) (*my_humanPointer).get_personality() << " human." << endl; // this line and the next line are the same
+    cout << my_humanPointer->get_name() << " is a " << (int) my_humanPointer->get_personality() << " human." << endl;
     // The absence of a default reverse-map for enum classes in C++ is due to the language design. 
     // Enumerations are typically used for symbolic constants, and their primary purpose is to provide a set of named values. 
     // Enumerations are not inherently designed for bidirectional mapping between integer values and enum class values.
 
-    cout << my_human.get_name() << " is " << my_human.get_age() << " years old." << endl;
+    cout << my_humanPointer->get_name() << " is " << my_humanPointer->get_age() << " years old." << endl;
     
     cout << endl;
     cout << endl;
